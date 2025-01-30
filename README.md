@@ -11,6 +11,8 @@ A feladat:
 5. Leellenőrzi a regisztráció sikerességét
 
 Megjegyzés: Riportot is készítsen a teszt és részletes readme-t is tartalmazzon a projekt.
+
+
 --------------------------------------------------------------------------------------------
 Előfeltételek:
 - Emulálni egy android eszközt (1080x2400) API 34, amire telepítve van a Budapest13 applikáció
