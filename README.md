@@ -1,5 +1,6 @@
 Feladat:
-Java és lehetőleg TestNG segítségével írj kérlek egy regisztrációs teszt folyamatot a Budapest13 Smart City mobil alkalmazásra (Google Storeban vagy App Storeban is megtalálható).
+Java és lehetőleg TestNG segítségével írj kérlek egy regisztrációs teszt folyamatot a Budapest13 Smart City mobil alkalmazásra 
+(Google Storeban vagy App Storeban is megtalálható).
 
 A feladat:
 1. Megnyitja az alkalmazást
@@ -13,6 +14,11 @@ Megjegyzés: Riportot is készítsen a teszt és részletes readme-t is tartalma
 Előfeltételek:
 - Emulálni egy android eszközt (1080x2400) API 34, amire telepítve van a Budapest13 applikáció
 
-Hiányzó elemek:
-- Nem találtam megoldást a swipeolásra, csak a régebbi verziókban
+Futtatás:
+- Futtatsd a TestNGCucumberRunner-t
+
+Hiányzó elemek: Ezek már nem fértek bele az időmbe
+- Nem találtam megoldást a swipeolásra, csak a régebbi verziókban (manuálisan kell megtenni a regisztrációs formon)
 - Nem sikerült API-n keresztül validálni a regisztrációt
+
+A generált report megtalálható futtatás után
