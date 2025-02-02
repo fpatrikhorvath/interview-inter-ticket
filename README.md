@@ -1,10 +1,8 @@
-Feladat:
+A feladat:
+
 Java és lehetőleg TestNG segítségével írj kérlek egy regisztrációs teszt folyamatot a Budapest13 Smart City mobil
 alkalmazásra
 (Google Storeban vagy App Storeban is megtalálható).
-
---------------------------------------------------------------------------------------------
-A feladat:
 
 1. Megnyitja az alkalmazást
 2. Regisztrál
@@ -16,16 +14,31 @@ Megjegyzés: Riportot is készítsen a teszt és részletes readme-t is tartalma
 
 
 --------------------------------------------------------------------------------------------
+
 Előfeltételek:
 
-- Emulálni egy android eszközt (1080x2400) API 34, amire telepítve van a Budapest13 applikáció
+- Emulálni egy android eszközt (1080x2400) API 34, amire telepítve van a Budapest13 applikáció.
+    Ehhez Android studiot + UiAutomator2-t + Appium Inspectort használtam
+
+--------------------------------------------------------------------------------------------
+
+Technológiák:
+
+- Cucumber
+- TestNG
+- Java/Maven
+- Appium (& Selenium)
+
+--------------------------------------------------------------------------------------------
 
 Futtatás:
 
 - Futtatsd a TestNGCucumberRunner-t
+- A cucumber report megtalálható a futás végén 
+(pl:  https://reports.cucumber.io/reports/ffe48248-3ef1-4382-9166-177a3c84b12a)
+
+--------------------------------------------------------------------------------------------
 
 Hiányzó elemek:
 
 - Nem sikerült API-n keresztül validálni a regisztrációt
-
-A generált report megtalálható futtatás után
