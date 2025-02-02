@@ -12,51 +12,61 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <selenium.version>4.18.1</selenium.version>
+        <cucumber.version>7.3.0</cucumber.version>
+        <testng.version>7.7.0</testng.version>
+        <appium.version>9.1.0</appium.version>
+        <rest-assured.version>4.4.0</rest-assured.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.4.0</version>
+            <version>${testng.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.18.1</version>
+            <version>${selenium.version}</version>
         </dependency>
+
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>9.1.0</version>
+            <version>${appium.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
-            <version>4.23.0</version>
+            <version>${selenium.version}</version>
         </dependency>
+
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>4.4.0</version> <!-- Replace with the latest version -->
+            <version>${rest-assured.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
-            <version>4.18.1</version>
+            <version>${selenium.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.3.0</version> <!-- Replace with the latest version -->
+            <version>${cucumber.version}</version>
         </dependency>
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>7.3.0</version> <!-- Replace with the latest version -->
+            <version>${cucumber.version}</version>
         </dependency>
     </dependencies>
 </project>
