@@ -1,28 +1,34 @@
 package org.example.pom;
 
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.touch.LongPressOptions;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.PointOption;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-import java.time.Duration;
-import java.util.HashMap;
-
 public class RegisterPage extends BasePage {
-    private final WebElement firstNameInput;
-    private final WebElement lastNameInput;
-    private final WebElement emailAddressInput;
-    private final WebElement passwordInput;
-    private final WebElement passwordAgainInput;
-    private final WebElement dpPolicyCheckbox;
-    private final WebElement tcCheckbox;
+    @AndroidFindBy(id = "com.interticket.budapest13:id/firstName")
+    private WebElement firstNameInput;
 
-    private final WebElement registerButton;
+    @AndroidFindBy(id = "com.interticket.budapest13:id/lastName")
+    private WebElement lastNameInput;
+
+    @AndroidFindBy(id = "com.interticket.budapest13:id/email")
+    private WebElement emailAddressInput;
+
+    @AndroidFindBy(id = "com.interticket.budapest13:id/newPassword")
+    private WebElement passwordInput;
+
+    @AndroidFindBy(id = "com.interticket.budapest13:id/newPasswordConfirmation")
+    private WebElement passwordAgainInput;
+
+    @AndroidFindBy(id = "com.interticket.budapest13:id/acceptDPPolicyCheckbox")
+    private WebElement dpPolicyCheckbox;
+
+    @AndroidFindBy(id = "com.interticket.budapest13:id/acceptTCCheckbox")
+    private WebElement tcCheckbox;
+
+    @AndroidFindBy(id = "com.interticket.budapest13:id/next")
+    private WebElement registerButton;
 
     public RegisterPage(final AndroidDriver driver) {
         super(driver);
@@ -36,6 +42,7 @@ public class RegisterPage extends BasePage {
         this.tcCheckbox         = driver.findElement(By.id("com.interticket.budapest13:id/acceptTCCheckbox"));
         this.registerButton     = driver.findElement(By.id("com.interticket.budapest13:id/next"));
     }
+
 
     public RegisterPage fillFirstName(final String firstName) {
         firstNameInput.sendKeys(firstName);

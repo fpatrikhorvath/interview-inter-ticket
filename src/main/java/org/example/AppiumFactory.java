@@ -48,6 +48,7 @@ public class AppiumFactory {
             throw new RuntimeException(e);
         }
     }
+
     private static void init() {
         try {
             // Configure desired capabilities

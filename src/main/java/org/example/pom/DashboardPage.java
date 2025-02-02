@@ -1,17 +1,18 @@
 package org.example.pom;
 
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
-public class DashboardPage extends BasePage{
-    private final WebElement profileButton;
+public class DashboardPage extends BasePage {
+    @AndroidFindBy(id = "com.interticket.budapest13:id/toolBarProfileImage")
+    private WebElement profileButton;
 
     public DashboardPage(final AndroidDriver driver) {
         super(driver);
-        this.profileButton = driver.findElement(By.id("com.interticket.budapest13:id/toolBarProfileImage"));
     }
-    public void openProfile(){
+
+    public void openProfile() {
         profileButton.click();
     }
 }
