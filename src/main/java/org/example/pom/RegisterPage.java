@@ -82,4 +82,15 @@ public class RegisterPage extends BasePage {
         return this;
     }
 
+    /**
+     * Maximizes the form
+     * Necessary workaround for the missing touch action
+     */
+
+    public RegisterPage maximizeForm() {
+        firstNameInput.click();
+        driver.hideKeyboard();
+
+        return this;
+    }
 }

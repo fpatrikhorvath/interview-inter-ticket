@@ -13,6 +13,7 @@ import org.example.pom.PostRegisterPage;
 import org.example.pom.RegisterPage;
 import org.testng.Assert;
 
+
 public class Stepdef {
     private AndroidDriver    driver;
     private DashboardPage    dashboardPage;
@@ -22,7 +23,11 @@ public class Stepdef {
 
     @Before
     public void setUp() {
-        driver = AppiumFactory.getDriver();
+        driver           = AppiumFactory.getDriver();
+        dashboardPage    = new DashboardPage(driver);
+        loginPage        = new LoginPage(driver);
+        registerPage     = new RegisterPage(driver);
+        postRegisterPage = new PostRegisterPage(driver);
     }
 
     @After
@@ -32,19 +37,16 @@ public class Stepdef {
 
     @Given("I open up the sign up form")
     public void iOpenUpSignUpForm() {
-        dashboardPage = new DashboardPage(driver);
-
         dashboardPage.openProfile();
 
-        loginPage = new LoginPage(driver);
         loginPage.openSignUpForm();
     }
 
     @When("I fill the sign up form")
     public void iFillTheSignUpForm() {
-        registerPage = new RegisterPage(driver);
         //Faker lib
-        registerPage.fillFirstName("Tihamer")
+        registerPage.maximizeForm()
+                .fillFirstName("Tihamer")
                 .fillLastName("Tesztelesi")
                 .fillEmailAddress("adastros1@gmail.com")
                 .fillPasswordInput("Teszt1234-")
@@ -53,7 +55,6 @@ public class Stepdef {
                 .acceptDPPolicyCheckbox()
                 .clickOnRegister();
 
-        postRegisterPage = new PostRegisterPage(driver);
         postRegisterPage.clickOnSkipButton();
     }
 
@@ -62,4 +63,5 @@ public class Stepdef {
     public void iValidateRegistrationSuccessful() {
         Assert.assertTrue(postRegisterPage.isRegisterSuccessful());
     }
+
 }
