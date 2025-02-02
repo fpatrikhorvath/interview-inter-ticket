@@ -2,7 +2,6 @@ package org.example.pom;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class RegisterPage extends BasePage {
@@ -32,15 +31,6 @@ public class RegisterPage extends BasePage {
 
     public RegisterPage(final AndroidDriver driver) {
         super(driver);
-
-        this.firstNameInput     = driver.findElement(By.id("com.interticket.budapest13:id/firstName"));
-        this.lastNameInput      = driver.findElement(By.id("com.interticket.budapest13:id/lastName"));
-        this.emailAddressInput  = driver.findElement(By.id("com.interticket.budapest13:id/email"));
-        this.passwordInput      = driver.findElement(By.id("com.interticket.budapest13:id/newPassword"));
-        this.passwordAgainInput = driver.findElement(By.id("com.interticket.budapest13:id/newPasswordConfirmation"));
-        this.dpPolicyCheckbox   = driver.findElement(By.id("com.interticket.budapest13:id/acceptDPPolicyCheckbox"));
-        this.tcCheckbox         = driver.findElement(By.id("com.interticket.budapest13:id/acceptTCCheckbox"));
-        this.registerButton     = driver.findElement(By.id("com.interticket.budapest13:id/next"));
     }
 
 
