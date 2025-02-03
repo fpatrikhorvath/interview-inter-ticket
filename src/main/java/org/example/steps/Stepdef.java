@@ -1,6 +1,7 @@
 package org.example.steps;
 
 import io.appium.java_client.android.AndroidDriver;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -8,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.AppiumFactory;
+import org.example.TestNGCucumberRunner;
 import org.example.pom.DashboardPage;
 import org.example.pom.LoginPage;
 import org.example.pom.PostRegisterPage;
@@ -16,18 +18,16 @@ import org.example.services.MailingService;
 import org.testng.Assert;
 
 
-public class Stepdef {
+public class Stepdef{
     private MailingService   mailingService;
     private AndroidDriver    driver;
     private DashboardPage    dashboardPage;
     private LoginPage        loginPage;
     private RegisterPage     registerPage;
     private PostRegisterPage postRegisterPage;
-
     @Before
     public void setUp() {
-        mailingService = new MailingService();
-
+        mailingService   = new MailingService();
         driver           = AppiumFactory.getDriver();
         dashboardPage    = new DashboardPage(driver);
         loginPage        = new LoginPage(driver);
@@ -49,7 +49,7 @@ public class Stepdef {
 
     @When("I fill the sign up form")
     public void iFillTheSignUpForm() {
-        //Faker lib
+        //Faker lib maybe
         registerPage.maximizeForm()
                 .fillFirstName("Tihamer")
                 .fillLastName("Tesztelesi")
@@ -71,11 +71,12 @@ public class Stepdef {
 
     @And("I validate that the registration email")
     public void iValidateThatTheRegistrationEmail() {
-        mailingService.confirmRegistration();
+        System.out.println("Validation link: " + mailingService.getValidationLink());
     }
 
     /**
      * I wouldn't use it on prod
+     *
      * @param seconds number of seconds
      */
     @And("I wait {int} seconds")

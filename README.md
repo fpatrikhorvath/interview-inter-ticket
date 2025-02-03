@@ -35,11 +35,11 @@ Technológiák:
 Futtatás:
 
 - Futtatsd a TestNGCucumberRunner-t
-- A cucumber report megtalálható a futás végén 
-(pl:  https://reports.cucumber.io/reports/ffe48248-3ef1-4382-9166-177a3c84b12a)
+- A cucumber report itt található: target/cucumber-report.html
 
 --------------------------------------------------------------------------------------------
 
 Hiányzó elemek:
 
 - Sikerült megszerezni a megerősítő tokent a return url-lel, viszont elküldéskor 500-at dob vissza
+- a testng többszörösen kilogolja a please publish message-et, hiába van kikapcsolva ez a funkció- valszeg logger issue

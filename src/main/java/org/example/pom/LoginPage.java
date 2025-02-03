@@ -12,7 +12,9 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void openSignUpForm() {
+    public LoginPage openSignUpForm() {
         registerButton.click();
+
+        return this;
     }
 }

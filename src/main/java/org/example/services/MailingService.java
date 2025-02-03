@@ -22,12 +22,7 @@ public class MailingService {
         RestAssured.baseURI = PROTOCOL + "://" + ENDPOINT + "/" + email;
     }
 
-    public void confirmRegistration() {
-        RestAssured.baseURI = getUrl();
-        RestAssured.given().get().then().extract().statusCode();
-    }
-
-    private String getUrl() {
+    public String getValidationLink() {
 
         final String responseBody = RestAssured
                 .given()
@@ -37,7 +32,7 @@ public class MailingService {
                 .extract()
                 .response()
                 .getBody()
-                .prettyPrint();
+                .asPrettyString();
 
         final int startIndex = responseBody.indexOf("\"links\":[\"");
         final int endIndex   = responseBody.indexOf("\"]", startIndex);

@@ -13,7 +13,9 @@ public class DashboardPage extends BasePage {
         super(driver);
     }
 
-    public void openProfile() {
+    public DashboardPage openProfile() {
         profileButton.click();
+
+        return this;
     }
 }
