@@ -6,17 +6,17 @@ import java.util.Random;
 
 
 public class MailingService {
-    private static final String PROTOCOL           = "https";
-    private static final String ENDPOINT           = "mailsac.com/inbox";
-    private static final String EMAIL_STATIC_START = "aappiumtest";
-    private static final String EMAIL_STATIC_END   = "@mailsac.com";
-    private static final int    RANDOM_BOUND       = 30000;
+    private static final String PROTOCOL          = "https";
+    private static final String ENDPOINT          = "mailsac.com/inbox";
+    private static final String EMAIL_STATIC_PART = "aappiumtest";
+    private static final String EMAIL_PROVIDER    = "mailsac.com";
+    private static final int    RANDOM_BOUND      = 30000;
 
     private String email;
 
     public MailingService() {
         final int id = new Random().nextInt(RANDOM_BOUND);
-        email = EMAIL_STATIC_START + id + EMAIL_STATIC_END;
+        email = EMAIL_STATIC_PART + id + "@" + EMAIL_PROVIDER;
 
         System.out.println("Generated email address: " + PROTOCOL + "://" + ENDPOINT + "/" + email);
         RestAssured.baseURI = PROTOCOL + "://" + ENDPOINT + "/" + email;
