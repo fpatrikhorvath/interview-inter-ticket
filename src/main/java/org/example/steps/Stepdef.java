@@ -3,6 +3,7 @@ package org.example.steps;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,10 +12,12 @@ import org.example.pom.DashboardPage;
 import org.example.pom.LoginPage;
 import org.example.pom.PostRegisterPage;
 import org.example.pom.RegisterPage;
+import org.example.services.MailingService;
 import org.testng.Assert;
 
 
 public class Stepdef {
+    private MailingService   mailingService;
     private AndroidDriver    driver;
     private DashboardPage    dashboardPage;
     private LoginPage        loginPage;
@@ -23,6 +26,8 @@ public class Stepdef {
 
     @Before
     public void setUp() {
+        mailingService = new MailingService();
+
         driver           = AppiumFactory.getDriver();
         dashboardPage    = new DashboardPage(driver);
         loginPage        = new LoginPage(driver);
@@ -48,7 +53,7 @@ public class Stepdef {
         registerPage.maximizeForm()
                 .fillFirstName("Tihamer")
                 .fillLastName("Tesztelesi")
-                .fillEmailAddress("adastros1@gmail.com")
+                .fillEmailAddress(mailingService.getEmailAddress())
                 .fillPasswordInput("Teszt1234-")
                 .fillPasswordAgainInput("Teszt1234-")
                 .acceptTCCheckbox()
@@ -64,4 +69,21 @@ public class Stepdef {
         Assert.assertTrue(postRegisterPage.isRegisterSuccessful());
     }
 
+    @And("I validate that the registration email")
+    public void iValidateThatTheRegistrationEmail() {
+        mailingService.confirmRegistration();
+    }
+
+    /**
+     * I wouldn't use it on prod
+     * @param seconds number of seconds
+     */
+    @And("I wait {int} seconds")
+    public void iWaitSeconds(final int seconds) {
+        try {
+            Thread.sleep(seconds * 1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -28,6 +28,7 @@ Technológiák:
 - TestNG
 - Java/Maven
 - Appium (& Selenium)
+- https://mailsac.com - Mailing
 
 --------------------------------------------------------------------------------------------
 
@@ -41,4 +42,4 @@ Futtatás:
 
 Hiányzó elemek:
 
-- Nem sikerült API-n keresztül validálni a regisztrációt
+- Sikerült megszerezni a megerősítő tokent a return url-lel, viszont elküldéskor 500-at dob vissza
