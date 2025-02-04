@@ -11,7 +11,6 @@ public class MailingService {
     private static final String PROTOCOL = "https";
     private static final String EMAIL_STATIC_PART = "aappiumtest";
     private static final String EMAIL_PROVIDER = "mailsac.com";
-    private static final String BASE_URL = "mailsac.com"; // Base URL without "/inbox"
     private static final int RANDOM_BOUND = 30000;
 
     private String email;
@@ -20,7 +19,7 @@ public class MailingService {
         final int id = new Random().nextInt(RANDOM_BOUND);
         email = EMAIL_STATIC_PART + id + "@" + EMAIL_PROVIDER;
 
-        String generatedEmail = PROTOCOL + "://" + BASE_URL; // Only base URL is used here
+        String generatedEmail = PROTOCOL + "://" + EMAIL_PROVIDER; // Only base URL is used here
         System.out.println("Generated email address: " + generatedEmail + "/inbox/" + email);
 
         RestAssured.baseURI = generatedEmail;
